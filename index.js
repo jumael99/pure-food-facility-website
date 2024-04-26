@@ -5,6 +5,10 @@ const app = express();
 const bodyParser = require('body-parser');
 const orderSchema = require('./models/order');
 const session = require('express-session');
+const json2xls = require('json2xls');
+const fs = require('fs');
+
+app.use(json2xls.middleware);
 
 const mongoDBUri =
     "mongodb+srv://ehtesamul99:55555@cluster0.uftmrbv.mongodb.net/pureFoodDB?retryWrites=true&w=majority&appName=Cluster0";
@@ -99,6 +103,29 @@ app.get('/logout', (req, res) => {
     res.redirect('/admin-login');
 });
 
+app.get('/download-orders', async (req, res) => {
+    try {
+        // Fetch all orders from the database
+        const orders = await orderSchema.find({}).lean();
+        const xlsData = json2xls(orders);
+        const fileName = 'orders.xlsx';
+        const filePath = './' + fileName;
+        fs.writeFileSync(filePath, xlsData, 'binary');
+
+        res.download(filePath, fileName, (err) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error downloading the file');
+            } else {
+                // Optionally delete the file after download
+                fs.unlinkSync(filePath);
+            }
+        });
+    } catch (error) {
+        console.error('Error creating Excel file:', error);
+        res.status(500).send('Failed to download file');
+    }
+});
 
 mongoose
     .connect(mongoDBUri)
