@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Order Form</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    />
     <style>
+        body {
+            background-color: #ece6dd;
+        }
         .form-container {
             min-height: 100vh;
             display: flex;
@@ -16,7 +22,7 @@
         }
 
         .order-container {
-            background-image: url('img/baby.jpg');
+            background-image: url("img/baby.jpg");
             background-size: cover;
             background-position: center;
             position: relative; /* Needed for absolute positioning of pseudo-elements */
@@ -27,7 +33,7 @@
         }
 
         .order-container::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
@@ -57,6 +63,7 @@
             padding: 6px 10px;
             width: 150px;
             text-decoration: none;
+            font-weight: 500;
             font-size: 18px;
             border-radius: 4px;
             position: absolute;
@@ -78,6 +85,7 @@
 
         .text-overlay p {
             margin: 0;
+            font-weight: 500;
             font-size: 18px;
             line-height: 1.5;
         }
@@ -131,7 +139,6 @@
             }
         }
 
-
         /*.form-container {*/
         /*    padding: 15px;*/
         /*    background-color: #f8f9fa;*/
@@ -149,8 +156,6 @@
             padding: 10px;
             font-size: 16px;
         }
-
-
 
         .card-title {
             font-size: 20px;
@@ -178,10 +183,9 @@
             }
         }
 
-        Benefits sections CSS
-        .full-height-section {
+        Benefits sections CSS .full-height-section {
             height: 100vh;
-            background-color: #047CC3;
+            background-color: #047cc3;
             color: #fff; /* White text color */
             padding: 2rem; /* Padding for spacing */
         }
@@ -196,13 +200,16 @@
         .section-title {
             font-size: 2.5rem; /* Increased title size */
             margin-bottom: 2rem; /* Increased space below the title */
-            color: #fff; /* White text color */
+            color: rgb(93, 93, 93); /* White text color */
+            font-weight: 700;
         }
 
         .list-group-item {
             background-color: transparent; /* Transparent background for list items */
             border: none; /* No borders for list items */
-            font-size: 1.25rem; /* Increased font size for list items */
+            font-size: 1.75rem; /* Increased font size for list items */
+            font-weight: 700;
+            color: rgb(93, 93, 93);
             /*color: #fff; !* White text color *!*/
         }
 
@@ -226,7 +233,6 @@
             }
         }
 
-
         nav.navbar {
             width: 100%; /* Ensure the navbar takes full width */
         }
@@ -235,18 +241,85 @@
         /*    position: relative;*/
         /*    z-index: 100;  !* Or any number greater than 1 *!*/
         /*}*/
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 15px;
+            border: none;
+            outline: none;
+            background-color: #feb45d;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        #scrollToTopBtn::before {
+            content: "^";
+            font-size: 25px;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #ff9933;
+        }
+
+        footer {
+            background-color: #feb45d;
+            color: black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-contact {
+            font-weight: 400;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .footer-social-icons {
+            margin-top: 20px;
+        }
+
+        .footer-social-icons a {
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .footer-bottom {
+            font-size: 14px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-
+<button id="scrollToTopBtn" onclick="scrollToTop()"></button>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="img/transparent.png" alt="PUREE Food Facility logo" width="40" height="auto">
+            <img
+                    src="img/transparent.png"
+                    alt="PUREE Food Facility logo"
+                    width="40"
+                    height="auto"
+                    style="font-weight: 700"
+            />
             PUREE Food Facility
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -255,13 +328,12 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#Product_details">Products</a
+                    ><!--cereal khawanor niyom e niye jabe-->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#footer">Contact</a>
+                    <!--footer e niye jabe-->
                 </li>
             </ul>
         </div>
@@ -271,170 +343,472 @@
 <div class="order-container">
     <div class="button-container">
         <div class="text-overlay">
-            <p>Discover our delicious and nutritious baby food.</p>
-            <p>Made with the finest ingredients for your little one.</p>
+            <p>আপনার শিশুর জন্য পুষ্টিকর ও স্বাস্থকর সিরিয়াল নিন</p>
+            <p>১৮টি উপাদানের নিখুঁদ মিশ্রণে ঘরোয়া পরিবেশে তৈরি</p>
         </div>
-        <a href="#orderSection" class="btn-overlay">Order now</a>
+        <a href="#orderSection" class="btn-overlay"><b>এখনই অর্ডার করুন!</b></a>
     </div>
 </div>
-
-
-
 <!--Ingredients section-->
 <div class="container my-5">
-    <h2 class="text-center mb-4">Elements that we used to create cereal:</h2>
+    <h2 class="text-center mb-4" style="font-weight: 700">
+        আমাদের সিরিয়াল তৈরি করতে ব্যবহৃত উপাদান:
+    </h2>
     <div class="row">
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3"
-                 style=" color:white; background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/1.jpg" alt="Red Lentils" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img src="img/1.jpg" alt="আপেল" class="card-img-top rounded-top" />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
                     <p class="card-text m-0">আপেল</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3" style="background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/2.jpg" alt="Cocoa Powder" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">Cocoa Powder</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img src="img/2.jpg" alt="কিউই" class="card-img-top rounded-top" />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">কিউই</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3" style="background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/3.jpg" alt="Millet" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">Millet</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img src="img/3.jpg" alt="আখরোট" class="card-img-top rounded-top" />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">আখরোট</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3" style="background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/4.jpg" alt="Millet" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">Millet</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/4.jpg"
+                        alt="পেস্তা বাদাম"
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">পেস্তা বাদাম</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3"
-                 style=" color:white; background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/5.jpg" alt="Red Lentils" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">আপেল</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/5.jpg"
+                        alt="কাঠবাদাম"
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">কাঠবাদাম</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3" style="background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/6.jpg" alt="Cocoa Powder" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">Cocoa Powder</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/6.jpg"
+                        alt="কাজু বাদাম"
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">কাজু বাদাম</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3" style="background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/7.jpg" alt="Millet" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">Millet</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/7.jpg"
+                        alt="চিনা বাদাম"
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">চিনা বাদাম</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3" style="background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/8.jpg" alt="Millet" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">Millet</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/8.jpg"
+                        alt="মটর ডাল "
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">মটর ডাল</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3"
-                 style=" color:white; background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/9.jpg" alt="Red Lentils" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">আপেল</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/9.jpg"
+                        alt="মসুর ডাল"
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">মসুর ডাল</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3" style="background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/10.jpg" alt="Cocoa Powder" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">Cocoa Powder</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/10.jpg"
+                        alt="বুটের ডাল"
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">বুটের ডাল</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3" style="background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/11.jpg" alt="Millet" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">Millet</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/11.jpg"
+                        alt="মুগ ডাল"
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">মুগ ডাল</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3" style="background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/12.jpg" alt="Millet" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">Millet</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img src="img/12.jpg" alt="গম" class="card-img-top rounded-top" />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">গম</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3"
-                 style=" color:white; background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/13.jpg" alt="Red Lentils" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">আপেল</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/13.jpg"
+                        alt="ভুট্টা"
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">ভুট্টা</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3" style="background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/14.jpg" alt="Cocoa Powder" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">Cocoa Powder</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/14.jpg"
+                        alt="আমন চাল"
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">আমন চাল</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3" style="background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/15.jpg" alt="Millet" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">Millet</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/15.jpg"
+                        alt="পোলাও চাল"
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">পোলাও চাল</p>
                 </div>
             </div>
         </div>
         <div class="col-6 col-md-3 mb-4">
-            <div class="card h-100 rounded-3" style="background-color: #FEB45D; border: 1px solid #FEB45D;">
-                <img src="img/16.jpg" alt="Millet" class="card-img-top rounded-top">
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <p class="card-text m-0">Millet</p>
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/16.jpg"
+                        alt="সিদ্ধ চাল"
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">সিদ্ধ চাল</p>
                 </div>
             </div>
         </div>
-
+        <div class="col-6 col-md-3 mb-4">
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img
+                        src="img/17.jpg"
+                        alt="সাবুদানা"
+                        class="card-img-top rounded-top"
+                />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">সাবুদানা</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+            <div
+                    class="card h-100 rounded-3 shadow-lg"
+                    style="
+              color: black;
+              font-weight: 700;
+              font-size: large;
+              background-color: #feb45d;
+              border: 1px solid #feb45d;
+            "
+            >
+                <img src="img/18.jpg" alt="এলাচ" class="card-img-top rounded-top" />
+                <div
+                        class="card-body d-flex justify-content-center align-items-center"
+                >
+                    <p class="card-text m-0">এলাচ</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <!--Benefits of Cereal-->
-<div class="container-fluid full-height-section">
-    <h2 class="section-title text-center text-sm-left">Why babies need to feed cereal:</h2>
+<div
+        class="container-fluid full-height-section"
+        style="background-color: rgb(237, 225, 203)"
+>
+    <h2 class="section-title text-center text-sm-left">
+        যে কারণে আপনার বাচ্চাকে সিরিয়াল খাওয়াবেন:
+    </h2>
     <div class="row h-100 align-items-center">
         <div class="col-md-6 d-flex justify-content-center">
-            <img src="img/cereal-eating-baby.jpg" class="rounded-img" alt="Baby eating cereal">
+            <img
+                    src="img/cereal-eating-baby.jpg"
+                    class="rounded-img"
+                    alt="Baby eating cereal"
+            />
         </div>
         <div class="col-md-6">
             <ul class="list-group">
-                <li class="list-group-item">Eliminates the lack of appetite in children.</li>
-                <li class="list-group-item">Increases the disease resistance capacity of a child's body.</li>
-                <li class="list-group-item">Enhances brain function and memory power.</li>
-                <li class="list-group-item">Compensates for iron deficiency in the body.</li>
-                <li class="list-group-item">Controls cholesterol levels and blood pressure in the blood.</li>
-                <li class="list-group-item">Increases body strength, and improves skin complexion.</li>
+                <li class="list-group-item">
+                    ১. শিশুর ওজন বৃদ্ধি ও সুস্বাস্থ গঠন করে
+                </li>
+                <li class="list-group-item">২. প্রতিদিনের খাদ্য চাহিদা পূরণ করে</li>
+                <li class="list-group-item">৩. মেধা বিকাশে সাহায্য করে</li>
+                <li class="list-group-item">৪. রোগ প্রতিরোগ ক্ষমতা বৃদ্ধি করে</li>
+                <li class="list-group-item">৫. বাচ্চার খাবারের রুচি বৃদ্ধি করে</li>
+                <li class="list-group-item">৬. খাবারের অনীহা দূর করে</li>
+                <li class="list-group-item">৭. বাচ্চার হজমশক্তি বৃদ্ধি করে</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--Section for Product photo and mannual-->
+<div
+        class="container-fluid full-height-section"
+        style="background-color: rgb(237, 225, 203); margin-top: 40px"
+        id="Product_details"
+>
+    <h2 class="section-title text-center text-sm-left">
+        সিরিয়াল প্ৰস্তুত করার নিয়ম:
+    </h2>
+    <div class="row h-100 align-items-center">
+        <div class="col-md-6 d-flex justify-content-center">
+            <img
+                    src="img/product photo.png"
+                    class="rounded-img"
+                    alt="Baby eating cereal"
+            />
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item">১. ---</li>
+                <li class="list-group-item">২. ---</li>
+                <li class="list-group-item">৩. ---</li>
+                <li class="list-group-item">৪. ---</li>
+                <li class="list-group-item">৫. ---</li>
+                <li class="list-group-item">৬. ---</li>
+                <li class="list-group-item">৭. ---</li>
             </ul>
         </div>
     </div>
@@ -442,29 +816,59 @@
 
 <!--Form section-->
 <div class="form-container mb-4" id="orderSection">
-    <h1 class="text-center mb-4">অর্ডার করতে আপনার নাম, ঠিকানা ও ফোন নম্বর দিন অর্ডার কনফার্ম করুন</h1>
+    <h1 class="text-center mb-4">
+        অর্ডার করতে আপনার নাম, ঠিকানা ও ফোন নম্বর দিন অর্ডার কনফার্ম করুন
+    </h1>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <form action="/order" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label">আপনার নাম *</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                name="name"
+                                required
+                        />
                     </div>
                     <div class="mb-3">
-                        <label for="mobile" class="form-label">আপনার মোবাইল নাম্বার *</label>
-                        <input type="text" class="form-control" id="mobile" name="mobile" required>
+                        <label for="mobile" class="form-label"
+                        >আপনার মোবাইল নাম্বার *</label
+                        >
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="mobile"
+                                name="mobile"
+                                required
+                        />
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">আপনার ঠিকানা *</label>
-                        <textarea class="form-control" id="address" name="address" required></textarea>
+                        <textarea
+                                class="form-control"
+                                id="address"
+                                name="address"
+                                required
+                        ></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="quantity" class="form-label">Quantity</label>
-                        <input type="number" class="form-control" id="quantity" name="quantity" value="1" min="1"
-                               required>
+                        <input
+                                type="number"
+                                class="form-control"
+                                id="quantity"
+                                name="quantity"
+                                value="1"
+                                min="1"
+                                required
+                        />
                     </div>
-                    <button type="submit" class="btn btn-primary place-order-btn ">Place Order</button>
+                    <button type="submit" class="btn btn-primary place-order-btn">
+                        Place Order
+                    </button>
                 </form>
             </div>
             <div class="col-md-6">
@@ -485,7 +889,9 @@
                                 <span>Shipping</span>
                                 <span class="text-end">ফ্রি ডেলিভারি</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between fw-bold">
+                            <li
+                                    class="list-group-item d-flex justify-content-between fw-bold"
+                            >
                                 <span>Total</span>
                                 <span class="text-end" id="total">1,100.00৳</span>
                             </li>
@@ -498,15 +904,48 @@
         </div>
     </div>
 </div>
-
-
-
+<footer>
+    <div class="footer-contact" id ="footer">
+        <strong>PUREE Food Facility</strong><br />
+        Address: Auchpara, Tongi, Gazipur, Dhaka, Bangladesh<br />
+        Phone: 01852-437839<br />
+        Email: monju.rasel@gmail.com
+    </div>
+    <div class="footer-social-icons">
+        <a href="https://web.facebook.com/pureefoodfacility" target="_blank">
+            <img
+                    src="img/facebook.png"
+                    alt="Facebook Icon"
+                    width="40"
+                    height="40"
+            />
+        </a>
+        <a href="https://web.facebook.com/pureefoodfacility" target="_blank">
+            <img
+                    src="img/instagram.png"
+                    alt="instagram Icon"
+                    width="40"
+                    height="40"
+            />
+        </a>
+        <a href="https://web.facebook.com/pureefoodfacility" target="_blank">
+            <img
+                    src="img/x-logo.png"
+                    alt="x-logo Icon"
+                    width="40"
+                    height="40"
+            />
+        </a>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 PUREE Food Facility. All rights reserved.
+    </div>
+</footer>
 <script>
-    const quantityInput = document.getElementById('quantity');
-    const productPrice = document.getElementById('product-price');
-    const subtotalElement = document.getElementById('subtotal');
-    const totalElement = document.getElementById('total');
-
+    const quantityInput = document.getElementById("quantity");
+    const productPrice = document.getElementById("product-price");
+    const subtotalElement = document.getElementById("subtotal");
+    const totalElement = document.getElementById("total");
 
     const updatePrices = () => {
         const quantity = parseInt(quantityInput.value);
@@ -519,8 +958,30 @@
         totalElement.textContent = `${total.toFixed(2)}৳`;
     };
 
-    quantityInput.addEventListener('input', updatePrices);
+    quantityInput.addEventListener("input", updatePrices);
     updatePrices();
+    // for scroll up btn.
+    window.onscroll = function () {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
